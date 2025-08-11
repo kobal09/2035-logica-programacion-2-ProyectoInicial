@@ -17,8 +17,8 @@ function asignarTextoElemento(elemento, texto){
 
 function verificarIntento(){
     //let numeroDeUsuario = document.getElementById('valorUsuario').value;
-    //let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
-    //evaluamos el tipo de variable de numeroDeUsuario
+    let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
+    /* //evaluamos el tipo de variable de numeroDeUsuario
     console.log(typeof(numeroDeUsuario));
     //mostramos por consola el numero secreto
     console.log(numeroSecreto);
@@ -30,7 +30,17 @@ function verificarIntento(){
     //dara TRUE, si lo dejamos el valor de numeroDeUsuario con el parseInt()
     //dara FALSE, si lo dejamos el valor de numeroDeUsuario sin el parseInt()
     console.log(numeroDeUsuario === numeroSecreto);
-    return;   
+    return;    */
+
+    if (numeroDeUsuario === numeroSecreto) {
+        asignarTextoElemento('p', 'acertaste el numero');
+    } else {
+        if (numeroDeUsuario > numeroSecreto) {
+            asignarTextoElemento('p', 'el numero secreto es menor');
+        } else {
+            asignarTextoElemento('p', 'el numero secreto es mayor');            
+        }
+    }
 }
 
 function generarNumeroSecreto() {
