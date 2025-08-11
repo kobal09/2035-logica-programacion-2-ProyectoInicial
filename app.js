@@ -35,6 +35,7 @@ function verificarIntento(){
 
     if (numeroDeUsuario === numeroSecreto) {
         asignarTextoElemento('p', `acertaste el numero en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'}`);
+        document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         if (numeroDeUsuario > numeroSecreto) {
             asignarTextoElemento('p', 'el numero secreto es menor');
@@ -42,11 +43,16 @@ function verificarIntento(){
             asignarTextoElemento('p', 'el numero secreto es mayor');            
         }
         intentos++;
+        limpiarCaja();
     }
 }
 
 function generarNumeroSecreto() {
     return Math.floor(Math.random()*10) + 1;
+}
+
+function limpiarCaja() {
+    document.querySelector('#valorUsuario').value = '';
 }
 
 asignarTextoElemento('h1', 'Juego del Numero Secreto!');
