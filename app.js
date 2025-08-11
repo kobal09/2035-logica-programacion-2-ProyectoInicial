@@ -8,15 +8,29 @@ $_parrafo.innerHTML = "Indica un numero del 1 al 10"; */
 //se creo una funcion para no repetir el automatizar la interaccion con el html
 
 let numeroSecreto = generarNumeroSecreto();
-console.log(numeroSecreto);
+//console.log(numeroSecreto);
 
 function asignarTextoElemento(elemento, texto){
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML = texto;
 }
 
-function intentoDeUsuario(){
-
+function verificarIntento(){
+    //let numeroDeUsuario = document.getElementById('valorUsuario').value;
+    //let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
+    //evaluamos el tipo de variable de numeroDeUsuario
+    console.log(typeof(numeroDeUsuario));
+    //mostramos por consola el numero secreto
+    console.log(numeroSecreto);
+    //evaluamos el tipo de variable de numeroSecreto
+    console.log(typeof(numeroSecreto));    
+    //mostramos por consola el numero de usuario
+    console.log(numeroDeUsuario);
+    //verificamos si las 2 variables son estrictamente iguales (tanto en el valor asigando a la variable, como el tipo de dato)
+    //dara TRUE, si lo dejamos el valor de numeroDeUsuario con el parseInt()
+    //dara FALSE, si lo dejamos el valor de numeroDeUsuario sin el parseInt()
+    console.log(numeroDeUsuario === numeroSecreto);
+    return;   
 }
 
 function generarNumeroSecreto() {
