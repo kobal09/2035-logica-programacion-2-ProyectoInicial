@@ -8,6 +8,7 @@ $_parrafo.innerHTML = "Indica un numero del 1 al 10"; */
 //se creo una funcion para no repetir el automatizar la interaccion con el html
 
 let numeroSecreto = generarNumeroSecreto();
+let intentos = 1;
 //console.log(numeroSecreto);
 
 function asignarTextoElemento(elemento, texto){
@@ -33,13 +34,14 @@ function verificarIntento(){
     return;    */
 
     if (numeroDeUsuario === numeroSecreto) {
-        asignarTextoElemento('p', 'acertaste el numero');
+        asignarTextoElemento('p', `acertaste el numero en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'}`);
     } else {
         if (numeroDeUsuario > numeroSecreto) {
             asignarTextoElemento('p', 'el numero secreto es menor');
         } else {
             asignarTextoElemento('p', 'el numero secreto es mayor');            
         }
+        intentos++;
     }
 }
 
