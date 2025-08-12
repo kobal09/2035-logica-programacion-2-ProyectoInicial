@@ -10,7 +10,7 @@ $_parrafo.innerHTML = "Indica un numero del 1 al 10"; */
 let numeroSecreto = 0;
 let intentos = 0;
 let listaNumerosSorteados = [];
-let numeroMaximo = 3;
+let numeroMaximo = 10;
 //console.log(numeroSecreto);
 
 function asignarTextoElemento(elemento, texto){
@@ -69,8 +69,8 @@ function reiniciarJuego() {
 
 function generarNumeroSecreto() {
     let numeroGenerado =  Math.floor(Math.random()*numeroMaximo)+1;
-    console.log(numeroGenerado);
-    console.log(listaNumerosSorteados);
+    /* console.log(numeroGenerado);
+    console.log(listaNumerosSorteados); */
 
     //si ya sorteamos todos los numeros
     if(listaNumerosSorteados.length == numeroMaximo){
