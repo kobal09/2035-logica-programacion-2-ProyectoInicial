@@ -7,8 +7,8 @@ $_parrafo.innerHTML = "Indica un numero del 1 al 10"; */
 
 //se creo una funcion para no repetir el automatizar la interaccion con el html
 
-let numeroSecreto = generarNumeroSecreto();
-let intentos = 1;
+let numeroSecreto = 0;
+let intentos = 0;
 //console.log(numeroSecreto);
 
 function asignarTextoElemento(elemento, texto){
@@ -47,6 +47,24 @@ function verificarIntento(){
     }
 }
 
+function condicionesIniciales() {
+    asignarTextoElemento('h1', 'Juego del Numero Secreto!');
+    asignarTextoElemento('p', 'Indica un numero del 1 al 10!');
+    numeroSecreto = generarNumeroSecreto();
+    intentos = 1;
+}
+
+function reiniciarJuego() {
+    //limpiar caja
+    limpiarCaja();
+    //indicar mensaje de intervalo de numeros
+    //generar el numero aleatorio
+    //inicializar el numero de intentos
+    condicionesIniciales();
+    //desabilitar el boton de nuevo juego
+    document.querySelector('#reiniciar').setAttribute('disabled','true');
+}
+
 function generarNumeroSecreto() {
     return Math.floor(Math.random()*10) + 1;
 }
@@ -55,5 +73,5 @@ function limpiarCaja() {
     document.querySelector('#valorUsuario').value = '';
 }
 
-asignarTextoElemento('h1', 'Juego del Numero Secreto!');
-asignarTextoElemento('p', 'Indica un numero del 1 al 10!');
+condicionesIniciales();
+
